@@ -1,0 +1,59 @@
+//main: ../style.less
+
+.intro{
+    background-color: @black;
+}
+
+.intro_inner{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.intro_col_left,
+.intro_col_right{
+    width: 50%;
+    
+    @media @mobile-sm-bp{
+        width: 100%;
+    }
+}
+.intro_col_left{
+    background: url('../img/bg.jpg') center no-repeat;
+    background-size: cover;
+    
+    @media @mobile-sm-bp{
+        background: @black;
+    }
+}
+
+.intro_col_right{
+    padding: 65px 15px 65px 60px;
+    max-width: 350px;
+    
+    @media @mobile-bp{
+        padding: 30px;
+    }
+}
+
+.title{
+    margin-bottom: 20px;
+    
+    font-family: @font-akiz;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: @white;
+    letter-spacing: 3px;
+    
+    @media @mobile-bp{
+        font-size: 42px;
+    }
+}
+.subtitle{
+    margin-bottom: 50px;
+    padding-right: 5px;
+    
+    color: @white;
+    font-size: 16px;
+    line-height: 1.5;
+}
+

@@ -1,0 +1,71 @@
+//main: ../style.less
+
+.contacts{
+    padding: 70px 0 0 0;
+    
+    @media @tablet-bp{
+        padding: 40px 0 0 0;
+        text-align: center;
+    }
+}
+
+.title--contacts{
+    margin: 0 0 30px 0;
+    color: @black;
+}
+
+.contacts_inner{
+    .flexbox();
+    flex-wrap: wrap;
+}
+
+.contacts_left,
+.contacts_right{
+    flex: 0 0 50%;
+    
+    @media @tablet-bp{
+        flex: 0 0 100%;
+    }
+}
+.contacts_right{
+   max-width:  250px;
+    
+    @media @tablet-bp{
+        max-width: none;
+    }
+}
+
+.subtitle--contacts{
+    margin: 0 0 30px 0;
+    color: @black;
+    
+    a{
+        color: @black;
+        
+        &:hover{
+        text-decoration: underline;
+        }
+    }
+}
+
+.contacts_icon{
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+.socials{
+    .flexbox();
+    margin-bottom: 20px;
+    
+    @media @tablet-bp{
+        justify-content: center;
+    }
+}
+.social{
+    margin: 0 35px 0 0;
+    
+    &:last-child{
+        margin: 0;
+    }
+}

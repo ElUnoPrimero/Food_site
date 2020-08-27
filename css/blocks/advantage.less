@@ -1,0 +1,96 @@
+//main: ../style.less
+
+.advantage{
+    background-color: @black;
+    overflow: hidden;
+}
+
+.advantage_banner{
+    .flexbox();
+    flex-wrap: wrap;
+    
+}
+
+.advantage_banner_left,
+.advantage_banner_right{
+    width: 50%;
+    
+    @media @mobile-bp{
+        width: 100%;
+    }
+}
+
+.title--advantage{
+    padding: 55px 15px 25px;
+    text-align: center;
+}
+
+.advantage_banner_right{
+    background: url('../img/bg (1).jpg') center no-repeat;
+    background-size: cover;
+}
+
+/*====Advantage bottom=====*/
+
+.advantage_list{
+    padding: 50px 0 10px;
+    background-color: #ebebeb;
+}
+.advantage_list_inner{
+    .flexbox();
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.avantage_list_col{
+    flex: 0 0 50%;
+    
+        @media @tablet-bp{
+        flex: 0 0 100%;
+    }  
+}
+
+.advantage_list_item{
+    .flexbox();
+     margin-bottom: 50px;
+}
+
+.advantage_icon{
+    .flexbox();
+    flex: 0 0 100px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    background-color: @black;
+}
+.advantage_icon img{
+    max-width: 100%;
+}
+
+.advantage_item-text{
+    .flexbox();
+    flex-direction: column;
+    flex: 1 1 100%;
+    
+    padding: 0 0 0 11px;
+}
+.advantage_title{
+    flex: 1 1 auto;
+    
+    margin: 0 0 15px;
+    padding: 0 10px 0 0;
+    font-family: @font-akiz;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: @black;
+    letter-spacing: 1px;
+    
+    @media @mobile-sm-bp{
+        font-size: 18px;
+    }
+}
+.subtitle--advantage{
+    margin: 0;
+    padding: 0 15px 0 0;
+    color: @black;
+}

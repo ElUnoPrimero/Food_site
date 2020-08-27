@@ -1,0 +1,279 @@
+//main: ../style.less
+
+.header{
+    padding: 30px 0;
+    z-index: 999;
+    
+    @media @mobile-sm-bp{
+        padding: 10px 0;
+    }
+}
+
+/*=====Header Top======*/
+.header_top{
+    .flexbox();
+    justify-content: space-between;
+    align-items: center;
+    
+    margin-bottom: 10px;
+}
+
+.header_top_lang{
+    z-index: 1001;
+}
+.header_top_lang_item{
+    color: @black;
+    font-family: @font-bebas;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid @white;;
+    
+    margin-right: 10px;
+    padding: 1px 4px;
+    
+    .transition(.2s linear);
+        
+    &.active{
+        background-color: @black;
+        color: @white;
+        border: 2px solid @black;
+    }
+    
+    &:hover{
+        border: 2px solid @black;
+    }
+    
+    @media @mobile-sm-bp{
+        margin-right: 0;
+    }
+}
+
+
+.header_top_order{
+    margin: 0 -10px;
+    padding: 3px 10px;
+    font-family: @font-bebas;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-size: 16px;
+    color: @black;
+    
+    position: relative;
+    z-index: 1001;
+    
+    .transition(.3s linear);
+    
+    &:hover{
+        color: @white;
+    }
+    
+    &:before{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background-color: @black;
+        
+        width: 0;
+        height: 100%;
+        
+        .transition(width .2s ease-out);
+    }
+    
+    &:hover:before{
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+/*=====Header Bottom======*/
+.header_bottom{
+    .flexbox();
+    align-items: center;
+    
+    @media @laptop-bp{
+        justify-content: space-between;
+    }
+}
+
+.header_bottom_col{
+    flex: 0 1 33.333%;
+    
+    &.logo{
+        display: block;
+        z-index: 1001;
+    }
+}
+
+.header_bottom_logo img{
+    margin: 0 auto;
+    min-width: 150px;
+}
+
+
+.header_bottom_menu{
+    .flexbox();
+    justify-content: space-between;
+    margin: 0 40px 0 0;
+    max-width: 255px;
+    
+    &--right{
+        margin: 0 0 0 40px;
+    }
+    
+    @media @laptop-bp{
+        display: none;
+    }
+    
+}
+
+
+.burger_menu{
+    display: none;
+    position: relative;
+    width: 25px;
+    height: 14px;
+
+    z-index: 1000;
+    cursor: pointer;
+    
+    @media @laptop-bp{
+        display: block;
+        
+        :focus{
+            outline: 0;
+        }
+    }
+}
+
+.burger_menu span{
+    content: '';
+    background-color: @black;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 6px;
+    left: 0;
+    
+    transition: all .2s linear;
+}
+
+.burger_menu:before,
+.burger_menu:after{
+    content: '';
+    background-color: @black;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+
+    transition: all .2s linear;
+}
+
+.burger_menu:before{
+    top: 0;
+}
+
+.burger_menu:after{
+    bottom: 0;
+}
+
+.burger_menu.active span{
+    transform: scale(0);
+}
+.burger_menu.active:before{
+    transform: rotate(45deg);
+    top: 6px;
+}
+.burger_menu.active:after{
+    transform: rotate(-45deg);
+    bottom: 6px;
+}
+
+
+
+
+
+
+
+
+
+.nav_link{
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: @font-bebas;
+    line-height: 19px;
+    color: @black;
+    letter-spacing: 1px;
+    
+    margin: 10px 0;
+    padding: 10px 0;
+    
+    position: relative;
+    z-index: 101;
+    
+    
+    &:before, &:after{
+        content: "";
+        position: absolute;
+        
+        background-color: @black;
+        width: 100%;
+        height: 1px;
+        
+        opacity: 0;
+        .transition(all .1s linear);
+    }
+    &:before{
+        left: -70%;
+        top: 100%;
+    }
+    
+    &:after{
+        right: -70%;
+        bottom: 100%;
+    }
+    
+    &:hover:before{
+        left: 0;
+        opacity: 1;
+    }
+    
+    &:hover:after{
+        right: 0;
+        opacity: 1;
+    }
+    
+    @media @laptop-bp{
+        display: block;
+    }
+    
+}
+
+
+
+.header_menu_mb{
+    display: none;
+    overflow: auto;
+    
+    @media @laptop-bp{
+        display: block;
+        padding: 120px 15px 15px;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: -100%;
+        
+        z-index: 999;
+
+        background-color: @white;
+        transition: all .2s linear;
+    
+        &.active{
+            right: 0;
+        }
+    } 
+}
